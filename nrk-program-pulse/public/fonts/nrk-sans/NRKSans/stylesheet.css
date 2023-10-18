@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "NRKSans";
+  src:
+    url("NRKSans_Medium.ttf") format("truetype");
+  font-weight: medium;
+}
+
+@font-face {
+  font-family: "NRKSans";
+  src:
+    url("NRKSans_Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "NRKSans";
+  src:
+    url("NRKSans_ExtraBold.ttf") format("truetype");
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: "NRKSans";
+  src:
+    url("NRKSans_Regular.ttf") format("truetype");
+  font-weight: normal;
+}

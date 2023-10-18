@@ -1,3 +1,5 @@
+@import "../public/fonts/nrk-sans/NRKSans/stylesheet.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -1,9 +1,20 @@
 import React from "react";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
+import Carousel from "../components/Carousel/Carousel";
+import Card from "../components/Card/Card";
 
 const Home = () => {
     return (
         <>
-            <h1 className="w-full h-[1200px] text-center">Home Page</h1>
+            <Navbar />
+            <main className=" h-[600px] w-full">
+                <Carousel />
+                <div className="flex justify-center relative bottom-[100px]">
+                    <Card icon="Trending" text="Topp 3 i 2018" />
+                </div>
+            </main>
+            <Footer />
         </>
     );
 };

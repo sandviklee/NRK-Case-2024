@@ -9,7 +9,7 @@ const App = ({ Component, pageProps }: AppProps) => {
             <Head>
                 <link rel="icon" type="image/x-icon" href="/favicon.svg" />
             </Head>
-            <div>
+            <div className="font-NRKSans overflow-hidden">
                 <Component {...pageProps} />
             </div>
         </>
