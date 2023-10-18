@@ -11,18 +11,20 @@ import {
     FiSquare,
 } from "react-icons/fi";
 
+export type IconType =
+    | "Search"
+    | "Categories"
+    | "Calendar"
+    | "RightArrow"
+    | "LeftArrow"
+    | "Trending"
+    | "Display"
+    | "Phone"
+    | "Tablet"
+    | string;
+
 interface IconProps {
-    icon:
-        | "Search"
-        | "Categories"
-        | "Calendar"
-        | "RightArrow"
-        | "LeftArrow"
-        | "Trending"
-        | "Display"
-        | "Phone"
-        | "Tablet"
-        | string;
+    icon: IconType;
     iconColor?: "white";
 }
 

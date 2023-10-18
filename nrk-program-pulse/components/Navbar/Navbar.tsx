@@ -1,6 +1,8 @@
 import Link from "next/link";
 import classNames from "classnames";
 import Icon from "../Icon/Icon";
+import SearchBox from "../Search/SearchBox";
+import { useState } from "react";
 
 interface NavbarProps {
     page?: "Hjem" | "Søk bedrifter";
@@ -30,30 +32,43 @@ const buttonClass = classNames(
 );
 
 const Navbar = ({ page }: NavbarProps) => {
+    const [visibleSearch, setVisibleSearch] = useState(false);
+
     return (
-        <nav className="flex flex-row w-full h-[120px] items-center px-[8%] text-base font-whyte">
-            <Link href={`/`}>
-                <img
-                    className="w-[200px]"
-                    src="/Programpulselogo.png"
-                    alt="companylogo"
-                />
-            </Link>
-            <div className="sm:visible sm:flex flex-row h-full w-full items-center justify-end hidden">
-                {navbarLinks.map((data) => (
-                    <Link
-                        key={data.title}
-                        href={data.link}
+        <>
+            {visibleSearch && (
+                <div>
+                    <div
+                        onClick={() => setVisibleSearch(false)}
+                        className="absolute z-50 w-full h-full bg-black bg-opacity-50 overflow-hidden"
+                    ></div>
+                    <div className="flex justify-center top-[20%] w-full absolute z-50">
+                        <SearchBox />
+                    </div>
+                </div>
+            )}
+
+            <nav className="flex flex-row w-full h-[120px] items-center px-[8%] text-base font-whyte">
+                <Link href={`/`}>
+                    <img
+                        className="w-[200px]"
+                        src="/Programpulselogo.png"
+                        alt="companylogo"
+                    />
+                </Link>
+                <div className="sm:visible sm:flex flex-row h-full w-full items-center justify-end gap-4 hidden">
+                    <button
+                        onClick={() => setVisibleSearch(true)}
                         className={buttonClass}
                     >
-                        <div className=" align-middle text-center pt-1">
-                            <Icon icon={data.icon} />
+                        <div className=" align-middle text-center">
+                            <Icon icon={"Search"} />
                         </div>
-                        <p>{data.title}</p>
-                    </Link>
-                ))}
-            </div>
-        </nav>
+                        <p>{"Søk"}</p>
+                    </button>
+                </div>
+            </nav>
+        </>
     );
 };
 

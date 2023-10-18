@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <>
             <Navbar />
-            <main className=" h-[600px] w-full">
+            <main className=" h-fit w-full overflow-hidden">
                 <Carousel />
                 <div className="flex justify-center relative bottom-[100px]">
                     <Card icon="Trending" text="Topp 3 i 2018" />
