@@ -1,4 +1,4 @@
-import jsonFile from "./data.json"
+import jsonFile from "../data/data.json"
 
 const AvailableSeries = ():any => {
     const distinctSeries = []

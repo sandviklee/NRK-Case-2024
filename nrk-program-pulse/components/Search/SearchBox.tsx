@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Field from "../Field/Field";
 import SearchResult from "./SearchResult";
-import AvailableSeries from "../Data/AvailableSeries";
+import AvailableSeries from "../../scripts/AvailableSeries";
 
 interface SearchBoxProps {
     closeFunc: Function;

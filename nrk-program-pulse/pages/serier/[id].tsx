@@ -5,11 +5,16 @@ import Footer from "../../components/Footer/Footer";
 import Image from "next/image";
 import Card from "../../components/Card/Card";
 import Icon from "../../components/Icon/Icon";
-import AvailableSeries from "../../components/Data/AvailableSeries";
-import Data from "../../components/Data/more_data.json";
+import AvailableSeries from "../../scripts/AvailableSeries";
+import Data from "../../data/more_data.json";
 import Calendar from "../../components/Calendar/Calendar";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import getSeriesData from "../../scripts/SeriesData";
+import classNames from "classnames";
+import getAllDatesSeriesData from "../../scripts/AllSeriesData";
+
+const pclasses = classNames("w-full", "text-center");
 
 export const getStaticPaths = async () => {
     const data = AvailableSeries();
@@ -18,7 +23,6 @@ export const getStaticPaths = async () => {
             params: { id: series },
         };
     });
-    console.log(paths);
     return { paths, fallback: false };
 };
 
@@ -28,23 +32,37 @@ export const getStaticProps = async (context) => {
         id.replaceAll("-", " ").charAt(0).toUpperCase() +
         id.replaceAll("-", " ").slice(1);
     const image = Data[id][0];
-    const data = "";
     const category = Data[id][2];
-    console.log(id);
 
     return {
         props: {
+            seriesId: id,
             seriesName: name,
             seriesImage: image,
             seriesCategory: category,
-            seriesData: data,
         },
     };
 };
 
-const Page = ({ seriesName, seriesImage, seriesCategory, seriesData }) => {
-    const [currentDate, setCurrentDate] = useState("");
+const Page = ({ seriesId, seriesName, seriesImage, seriesCategory }) => {
+    const [currentDate, setCurrentDate] = useState<string>("");
+    const [currentViews, setCurrentViews] = useState<object | null>(null);
+    const [allViews, setAllViews] = useState<object | null>(null);
     const [visibleCalendar, setVisibleCalendar] = useState(false);
+
+    const setData = () => {
+        const date = currentDate.split("-");
+        const newDate: string = String(date[2] + date[1] + date[0]);
+        const currentData = getSeriesData(seriesId, newDate);
+        const allData = getAllDatesSeriesData(seriesId);
+        setCurrentViews(currentData);
+        setAllViews(allData);
+    };
+
+    useEffect(() => {
+        setData();
+    }, [currentDate, seriesId]);
+
     return (
         <>
             <Head>
@@ -91,39 +109,73 @@ const Page = ({ seriesName, seriesImage, seriesCategory, seriesData }) => {
                     <div className="text-white flex flex-row w-full py-[4%] -px-[8%] justify-center gap-[35%] text-2xl">
                         <div className="flex flex-col justify-center">
                             <p>Visninger i dag</p>
-                            <div className="flex gap-[50%] justify-center py-[20%]">
-                                <div className="flex flex-col justify-center align-middle">
-                                    <Icon icon={"Display"} iconColor="white" />
-                                    <p>4000</p>
+                            {currentViews && (
+                                <div className="flex gap-[50%] justify-center py-[20%]">
+                                    <div className="flex flex-col justify-center align-middle">
+                                        <Icon
+                                            icon={"Display"}
+                                            iconColor="white"
+                                        />
+                                        <p className={pclasses}>
+                                            {currentViews["desktop"]}
+                                        </p>
+                                    </div>
+                                    <div className="flex flex-col justify-center align-middle">
+                                        <Icon
+                                            icon={"Phone"}
+                                            iconColor="white"
+                                        />
+                                        <p className={pclasses}>
+                                            {currentViews["mobile"]}
+                                        </p>
+                                    </div>
+                                    <div className="flex flex-col justify-center align-middle">
+                                        <Icon
+                                            icon={"Tablet"}
+                                            iconColor="white"
+                                        />
+                                        <p className={pclasses}>
+                                            {currentViews["tablet"]}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div className="flex flex-col justify-center align-middle">
-                                    <Icon icon={"Phone"} iconColor="white" />
-                                    <p>4000</p>
-                                </div>
-                                <div className="flex flex-col justify-center align-middle">
-                                    <Icon icon={"Tablet"} iconColor="white" />
-                                    <p>4000</p>
-                                </div>
-                            </div>
+                            )}
                         </div>
 
                         <div className="absolute h-[24%] w-[2px] bg-white"></div>
                         <div className="flex flex-col justify-center">
                             <p>Visninger i 2018</p>
-                            <div className="flex gap-[50%] justify-center py-[20%]">
-                                <div className="flex flex-col justify-center align-middle">
-                                    <Icon icon={"Display"} iconColor="white" />
-                                    <p>4000</p>
+                            {currentViews && (
+                                <div className="flex gap-[50%] justify-center py-[20%] text-base">
+                                    <div className="flex flex-col justify-center align-middle">
+                                        <Icon
+                                            icon={"Display"}
+                                            iconColor="white"
+                                        />
+                                        <p className={pclasses}>
+                                            {allViews["desktop"]}
+                                        </p>
+                                    </div>
+                                    <div className="flex flex-col justify-center align-middle">
+                                        <Icon
+                                            icon={"Phone"}
+                                            iconColor="white"
+                                        />
+                                        <p className={pclasses}>
+                                            {allViews["mobile"]}
+                                        </p>
+                                    </div>
+                                    <div className="flex flex-col justify-center align-middle">
+                                        <Icon
+                                            icon={"Tablet"}
+                                            iconColor="white"
+                                        />
+                                        <p className={pclasses}>
+                                            {allViews["tablet"]}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div className="flex flex-col justify-center align-middle">
-                                    <Icon icon={"Phone"} iconColor="white" />
-                                    <p>4000</p>
-                                </div>
-                                <div className="flex flex-col justify-center align-middle">
-                                    <Icon icon={"Tablet"} iconColor="white" />
-                                    <p>4000</p>
-                                </div>
-                            </div>
+                            )}
                         </div>
                     </div>
                 </div>

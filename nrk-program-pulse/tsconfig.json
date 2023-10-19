@@ -21,7 +21,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/Data/AvailableSeries.ts"  ],
+, "scripts/AvailableSeries.ts", "scripts/SeriesData.ts"  ],
   "exclude": [
     "node_modules"
   ]

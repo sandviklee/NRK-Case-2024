@@ -69,7 +69,7 @@ const Calendar = ({ setDate, setVisible, visible }: Calendar) => {
             months.indexOf(currentMonth) + 1 < 10
                 ? 0 + String(months.indexOf(currentMonth) + 1)
                 : String(months.indexOf(currentMonth) + 1);
-        setDate(`${day}.${month}.2018`);
+        setDate(`${day}-${month}-2018`);
         setVisible(false);
     };
 
@@ -132,7 +132,7 @@ const Calendar = ({ setDate, setVisible, visible }: Calendar) => {
                             <p key={day}>{day}</p>
                         ))}
                     </div>
-                    <div className="flex flex-row flex-wrap gap-[12px] px-4 py-2 text-xl text-white">
+                    <div className="flex flex-row flex-wrap gap-[12px] px-4 py-2 text-xl min-h-[220px] text-white">
                         {currentAmountOfDays.map((day) => (
                             <RadioButton
                                 key={day}

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Data from "../Data/more_data.json";
+import Data from "../../data/more_data.json";
 import { useEffect, useState } from "react";
 
 interface SearchResult {
