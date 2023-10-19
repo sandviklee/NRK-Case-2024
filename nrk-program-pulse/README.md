@@ -6,6 +6,12 @@ NRK TV Program Pulse is a web application made in NextJS, a React framework. The
 
 ## How to run the project
 
+Firstly go into the correct directory:
+
+```
+cd nrk-program-pulse/
+```
+
 To run the project you must first have NodeJS. **Install NodeJS [here](https://nodejs.org/en/download)**
 
 After installing NodeJS, you need to install all the packages:
@@ -40,7 +46,7 @@ All the components in this project is self made from ground up. Some of them are
 
 I use TailwindCSS to style the project, this is also because ease of use. I have alot of experience with regular CSS too, but chose Tailwind this time.
 
-I made some scripts to make the data set easier to use in the project. In the early stages of development I wanted to make a backend for the project, but chose not to because of time constraints. 
+I made some scripts to make the data set easier to use in the project. In the early stages of development I wanted to make a backend for the project, but chose not to because of time constraints.
 
 I really wanted to use the NRKTV API to get the images and information about the given series in the data set. I couldn't because I had CORS problems (localhost wasn't allowed), so I made myself some data sets with needed information (all under /data)
 
