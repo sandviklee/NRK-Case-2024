@@ -4,13 +4,23 @@
 
 NRK TV Program Pulse is a web application made in NextJS, a React framework. The given task has already been described in the earlier [README](../README.md).
 
-## How to run the project
+## Clone the Project
+
+To clone the project just type:
+```
+git clone https://github.com/sandviklee/NRKCase.git
+```
+
+## How to run the Project
 
 Firstly go into the correct directory:
 
 ```
 cd nrk-program-pulse/
 ```
+
+*NB! Check which directory you are in when you do this.*
+
 
 To run the project you must first have NodeJS. **Install NodeJS [here](https://nodejs.org/en/download)**
 
