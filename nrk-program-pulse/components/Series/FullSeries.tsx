@@ -11,7 +11,7 @@ const FullSeries = ({ imageSrc, seriesId }: FullSeriesProps) => {
     return (
         <>
             <div className="w-full overflow-hidden">
-                <Link href={`/series/${seriesId}`}>
+                <Link href={`/serier/${seriesId}`}>
                     <Image
                         className="w-full h-[600px] object-cover hover:scale-105 transition-transform delay-75"
                         src={imageSrc}

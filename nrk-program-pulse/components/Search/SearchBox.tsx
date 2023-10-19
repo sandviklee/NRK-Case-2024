@@ -3,10 +3,13 @@ import Field from "../Field/Field";
 import SearchResult from "./SearchResult";
 import AvailableSeries from "../Data/AvailableSeries";
 
-const SearchBox = () => {
+interface SearchBoxProps {
+    closeFunc: Function;
+}
+
+const SearchBox = ({ closeFunc }: SearchBoxProps) => {
     const [fieldValue, setFieldValue] = useState<string>("");
     const [results, setResults] = useState<Array<string>>([""]);
-    const [url, setUrl] = useState<string>("");
     const availableSeries = AvailableSeries();
 
     useEffect(() => {
@@ -44,6 +47,7 @@ const SearchBox = () => {
                             <div className="flex flex-col gap-y-[40px] mt-2 max-h-[400px] overflow-y-scroll">
                                 {results.map((series) => (
                                     <SearchResult
+                                        closeFunc={closeFunc}
                                         key={series}
                                         seriesId={series}
                                     />

@@ -8,19 +8,6 @@ interface NavbarProps {
     page?: "Hjem" | "Søk bedrifter";
 }
 
-const navbarLinks = [
-    {
-        title: "Søk",
-        link: "/",
-        icon: "Search",
-    },
-    {
-        title: "Kategorier",
-        link: "/kategorier",
-        icon: "Categories",
-    },
-];
-
 const buttonClass = classNames(
     "flex",
     "items-center",
@@ -28,7 +15,8 @@ const buttonClass = classNames(
     "gap-2",
     "h-[100%]",
     "w-[120px]",
-    "font-whyte"
+    "font-whyte",
+    "group"
 );
 
 const Navbar = ({ page }: NavbarProps) => {
@@ -43,7 +31,7 @@ const Navbar = ({ page }: NavbarProps) => {
                         className="absolute z-50 w-full h-full bg-black bg-opacity-50 overflow-hidden"
                     ></div>
                     <div className="flex justify-center top-[20%] w-full absolute z-50">
-                        <SearchBox />
+                        <SearchBox closeFunc={setVisibleSearch} />
                     </div>
                 </div>
             )}

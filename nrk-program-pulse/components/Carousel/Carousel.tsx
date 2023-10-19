@@ -69,7 +69,7 @@ const Carousel = () => {
                     />
                     <FullSeries
                         imageSrc="https://gfx.nrk.no/_vp8lH7mELr2zr1NZJ8HxgixFuZm3s3jDVVUMLKCW2eA"
-                        seriesId="side-om-side"
+                        seriesId="folkeopplysningen"
                     />
                     <FullSeries
                         imageSrc="https://gfx.nrk.no/1tQDwbH7N6bMzdZGsec6MQHE4SjFQszb_7cJeRTM0U0A"
