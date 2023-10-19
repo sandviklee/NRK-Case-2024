@@ -7,6 +7,7 @@ NRK TV Program Pulse is a web application made in NextJS, a React framework. The
 ## Clone the Project
 
 To clone the project just type:
+
 ```
 git clone https://github.com/sandviklee/NRKCase.git
 ```
@@ -19,8 +20,7 @@ Firstly go into the correct directory:
 cd nrk-program-pulse/
 ```
 
-*NB! Check which directory you are in when you do this.*
-
+_NB! Check which directory you are in when you do this._
 
 To run the project you must first have NodeJS. **Install NodeJS [here](https://nodejs.org/en/download)**
 
@@ -52,7 +52,7 @@ When you click one of TV shows you get forwarded to the next page, series page. 
 
 As I said earlier, the project is made in NextJS. Basically react, but with better page navigation. I chose this because ease of use and my experience with it.
 
-All the components in this project is self made from ground up. Some of them are the Calendar, Searchbox and Carousel.
+All the components in this project is self made from ground up. Some of them are the Calendar, Searchbox and Carousel. EXCEPT! React-icons, which I made my own component out of (Icons component).
 
 I use TailwindCSS to style the project, this is also because ease of use. I have alot of experience with regular CSS too, but chose Tailwind this time.
 

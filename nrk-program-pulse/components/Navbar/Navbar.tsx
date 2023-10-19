@@ -4,10 +4,6 @@ import Icon from "../Icon/Icon";
 import SearchBox from "../Search/SearchBox";
 import { useState } from "react";
 
-interface NavbarProps {
-    page?: "Hjem" | "Søk bedrifter";
-}
-
 const buttonClass = classNames(
     "flex",
     "items-center",
@@ -19,7 +15,7 @@ const buttonClass = classNames(
     "group"
 );
 
-const Navbar = ({ page }: NavbarProps) => {
+const Navbar = () => {
     const [visibleSearch, setVisibleSearch] = useState(false);
 
     return (
@@ -44,7 +40,7 @@ const Navbar = ({ page }: NavbarProps) => {
                         alt="companylogo"
                     />
                 </Link>
-                <div className="sm:visible sm:flex flex-row h-full w-full items-center justify-end gap-4 hidden">
+                <div className="flex-row h-full w-full items-center justify-end gap-4 hidden">
                     <button
                         onClick={() => setVisibleSearch(true)}
                         className={buttonClass}
