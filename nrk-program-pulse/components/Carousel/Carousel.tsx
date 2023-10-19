@@ -36,6 +36,7 @@ const Carousel = () => {
 
     let interval = 0;
     let iterate = 0;
+    const delay = 5000;
     const carouselLoop = () => {
         setTimeout(() => {
             setImagePos(interval);
@@ -47,7 +48,7 @@ const Carousel = () => {
                 iterate = 0;
             }
             carouselLoop();
-        }, 10000);
+        }, delay);
     };
 
     useEffect(() => {

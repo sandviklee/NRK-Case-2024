@@ -11,10 +11,8 @@ import Calendar from "../../components/Calendar/Calendar";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import getSeriesData from "../../scripts/SeriesData";
-import classNames from "classnames";
+import IconText from "../../components/Icon/IconText";
 import getAllDatesSeriesData from "../../scripts/AllSeriesData";
-
-const pclasses = classNames("w-full", "text-center");
 
 export const getStaticPaths = async () => {
     const data = AvailableSeries();
@@ -111,76 +109,44 @@ const Page = ({ seriesId, seriesName, seriesImage, seriesCategory }) => {
                             <p>Visninger i dag</p>
                             {currentViews && (
                                 <div className="flex gap-[50%] justify-center py-[20%]">
-                                    <div className="flex flex-col justify-center align-middle">
-                                        <Icon
-                                            icon={"Display"}
-                                            iconColor="white"
-                                        />
-                                        <p className={pclasses}>
-                                            {currentViews["desktop"]}
-                                        </p>
-                                    </div>
-                                    <div className="flex flex-col justify-center align-middle">
-                                        <Icon
-                                            icon={"Phone"}
-                                            iconColor="white"
-                                        />
-                                        <p className={pclasses}>
-                                            {currentViews["mobile"]}
-                                        </p>
-                                    </div>
-                                    <div className="flex flex-col justify-center align-middle">
-                                        <Icon
-                                            icon={"Tablet"}
-                                            iconColor="white"
-                                        />
-                                        <p className={pclasses}>
-                                            {currentViews["tablet"]}
-                                        </p>
-                                    </div>
+                                    <IconText
+                                        icon="Display"
+                                        label={currentViews["desktop"]}
+                                    />
+                                    <IconText
+                                        icon="Phone"
+                                        label={currentViews["mobile"]}
+                                    />
+                                    <IconText
+                                        icon="Tablet"
+                                        label={currentViews["tablet"]}
+                                    />
                                 </div>
                             )}
                         </div>
-
                         <div className="absolute h-[24%] w-[2px] bg-white"></div>
                         <div className="flex flex-col justify-center">
                             <p>Visninger i 2018</p>
                             {currentViews && (
                                 <div className="flex gap-[50%] justify-center py-[20%] text-base">
-                                    <div className="flex flex-col justify-center align-middle">
-                                        <Icon
-                                            icon={"Display"}
-                                            iconColor="white"
-                                        />
-                                        <p className={pclasses}>
-                                            {allViews["desktop"]}
-                                        </p>
-                                    </div>
-                                    <div className="flex flex-col justify-center align-middle">
-                                        <Icon
-                                            icon={"Phone"}
-                                            iconColor="white"
-                                        />
-                                        <p className={pclasses}>
-                                            {allViews["mobile"]}
-                                        </p>
-                                    </div>
-                                    <div className="flex flex-col justify-center align-middle">
-                                        <Icon
-                                            icon={"Tablet"}
-                                            iconColor="white"
-                                        />
-                                        <p className={pclasses}>
-                                            {allViews["tablet"]}
-                                        </p>
-                                    </div>
+                                    <IconText
+                                        icon="Display"
+                                        label={allViews["desktop"]}
+                                    />
+                                    <IconText
+                                        icon="Phone"
+                                        label={allViews["mobile"]}
+                                    />
+                                    <IconText
+                                        icon="Tablet"
+                                        label={allViews["tablet"]}
+                                    />
                                 </div>
                             )}
                         </div>
                     </div>
                 </div>
             </main>
-
             <Footer />
         </>
     );
