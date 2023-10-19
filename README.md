@@ -16,6 +16,8 @@ The data set consists of four things
 -   screen
 -   views
 
+As the name of the data set says, it should have been viewer numbers NRK TV from 2019, but the data was actually from 2018, so i stuck with that.
+
 ## How to open
 
 To open NRK TV Program pulse, read the inner [README](./nrk-program-pulse/README.md)
