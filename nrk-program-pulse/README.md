@@ -44,7 +44,7 @@ And the project should look like this:
 
 ## How The App Works
 
-The first page that welcomes you is the home page. At this page you get greeted with a navbar, a footer, a carousel of the top 3 most popular NRK TV series (by overall views in the year 2018). Right under you will see the top 4 most popular overall series on each platform. To search through all the series you can use the search button on the navbar.
+The first page that welcomes you is the home page. At this page you get greeted with a navbar, a footer, a carousel of the top 3 most popular NRK TV series (by overall views in the year 2018).
 
 When you click one of TV shows you get forwarded to the next page, series page. This page shows information and stats about the given series. You get both the overall views of 2018, and a button (the date) which you can use to change the date of the views on the left.
 
