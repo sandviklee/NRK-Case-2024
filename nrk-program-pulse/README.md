@@ -44,9 +44,9 @@ And the project should look like this:
 
 ## How The App Works
 
-The first page that welcomes you is the home page. At this page you get greeted with a navbar, a footer, a carousel of the top 3 most popular NRK TV series (by overall views in the year 2018).
+The first page that welcomes you is the home page. At this page you get greeted with a navbar, a footer, a carousel of the top 3 most popular NRK TV series (by overall views in the year 2018). NB: The carousel is not fully functional right now, since I didn't have time to implement it fully. Right now it is just a dummy.
 
-When you click one of TV shows you get forwarded to the next page, series page. This page shows information and stats about the given series. You get both the overall views of 2018, and a button (the date) which you can use to change the date of the views on the left.
+When you click one of TV shows (from search or carousel) you get forwarded to the next page, series page. This page shows information and stats about the given series. You get both the overall views of 2018, and a button (the date) which you can use to change the date of the views on the left.
 
 ## Project Specifications and Comments
 
